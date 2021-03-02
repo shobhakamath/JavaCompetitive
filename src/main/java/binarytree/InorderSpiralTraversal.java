@@ -4,6 +4,7 @@ import java.util.Stack;
 import org.junit.jupiter.api.Test;
 
 public class InorderSpiralTraversal {
+
     private Stack<Node> getLtoRStack(Stack<Node> stackRtoL){
         Stack<Node> stack=new Stack<Node>();
         Node node=null;
