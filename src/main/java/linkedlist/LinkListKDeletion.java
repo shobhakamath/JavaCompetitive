@@ -1,3 +1,5 @@
+package linkedlist;
+
 public class LinkListKDeletion {
     public static ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode current = head;

@@ -1,5 +1,7 @@
 package sorting;
 
+import org.junit.Test;
+
 public class MergeSort {
 
     private static Node mergeSort(Node A, int n) {
@@ -37,7 +39,14 @@ public class MergeSort {
         }
 
     }
-
+    public Node mergeKLists(Node[] lists) {
+        if(lists.length==0) return null;
+        Node node=lists[0];
+        for(int i=1;i<lists.length;i++){
+            node=merge(node,lists[i]);
+        }
+        return node;
+    }
     public static void main(String[] args) {
         Node root = new Node(3);
         root.next = new Node(6);
@@ -49,6 +58,24 @@ public class MergeSort {
             merged = merged.next;
         }
 
+    }
+
+    @Test
+    public void mergeMultipleLL(){
+        Node node1 = new Node(3);
+        node1.next = new Node(6);
+        node1.next.next = new Node(5);
+        node1.next.next.next = new Node(2);
+
+        Node node2 = new Node(1);
+        node2.next = new Node(3);
+        node2.next.next = new Node(9);
+        node2.next.next.next = new Node(7);
+        Node merged= mergeKLists(new Node[]{node1,node2});
+        while (merged != null) {
+            System.out.println(merged.data);
+            merged = merged.next;
+        }
     }
 }
 
