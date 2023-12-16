@@ -23,9 +23,9 @@ public class LongestLengthOfCharacterInAString {
         int i = 0;
         for (char ch : str.toCharArray()) {
             Index idx = characterIndex.getOrDefault(ch, new Index(i, i));
-            idx.lastIndex=i;
+            idx.lastIndex = i;
             maxLength = Math.max(maxLength, idx.lastIndex - idx.firstIndex + 1);
-            characterIndex.put(ch,idx);
+            characterIndex.put(ch, idx);
             i++;
         }
         return maxLength;
@@ -34,8 +34,8 @@ public class LongestLengthOfCharacterInAString {
 
 
 class Index {
-    int firstIndex = -1;
-    int lastIndex = -1;
+    int firstIndex;
+    int lastIndex;
 
     public Index(int i1, int i2) {
         firstIndex = i1;

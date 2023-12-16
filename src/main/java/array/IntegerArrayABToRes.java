@@ -20,11 +20,12 @@ res = {1,2,4,5,3}
 public class IntegerArrayABToRes {
 
     public static void main(String[] args) {
-        int a[] = {1, 2, 3, 4, 5};
-        int b[] = {0, 1, 2, 2, 2};
+        int[] a = {1, 2, 3, 4, 5};
+        int[] b = {0, 1, 2, 2, 2};
 
         Arrays.stream(new IntegerArrayABToRes().replaceAiWithBi(a, b))
                 .forEach(System.out::print);
+        System.out.println(" ");
 
         b = new int[]{0, 1, 2, 2, 3};
         Arrays.stream(new IntegerArrayABToRes().replaceAiWithBi(a, b))
